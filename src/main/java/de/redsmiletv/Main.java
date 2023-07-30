@@ -12,10 +12,10 @@ import java.util.Properties;
 public class Main {
     public static void main(String[] args) throws IOException {
         File configFile = new File("redbot.properties");
-        File srcFile = new File("src/main/resources/example.properties");
+        InputStream srcInputStream = Main.class.getClassLoader().getResourceAsStream("example.properties");
 
         if (!configFile.exists()) {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(srcFile));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(srcInputStream));
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(configFile));
 
             String line;
