@@ -28,3 +28,7 @@ tasks.withType<Jar> {
         attributes ["Main-Class"] = "de.redsmiletv.Main"
     }
 }
+
+tasks.shadowJar {
+    archiveFileName.set("RedBot-$version.jar")
+}
